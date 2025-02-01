@@ -1,5 +1,3 @@
-# Generated Cmake Pico project file
-
 cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_C_STANDARD 11)
@@ -44,14 +42,20 @@ pico_set_program_version(Atividade1 "0.1")
 pico_enable_stdio_uart(Atividade1 1)
 pico_enable_stdio_usb(Atividade1 1)
 
+#Generate PIO Header
+pico_generate_pio_header(Atividade1 ${CMAKE_CURRENT_LIST_DIR}/matriz_de_leds.pio OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
+
+
 # Add the standard library to the build
 target_link_libraries(Atividade1
-        pico_stdlib)
+pico_stdlib
+hardware_adc
+hardware_pio)
 
 # Add the standard include files to the build
 target_include_directories(Atividade1 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
+        ${PICO_SDK_PATH}/src/rp2_common/hardware_pio/include
 )
 
 pico_add_extra_outputs(Atividade1)
-
