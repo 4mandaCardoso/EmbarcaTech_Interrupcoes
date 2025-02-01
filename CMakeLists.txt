@@ -52,7 +52,7 @@ target_link_libraries(Atividade1
     hardware_adc
     hardware_pio
     hardware_clocks
-)
+    pico_bootrom)
 
 target_include_directories(Atividade1 PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}
