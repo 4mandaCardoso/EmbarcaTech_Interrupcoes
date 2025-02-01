@@ -1,146 +1,147 @@
+#ifndef NUMEROS_H
+#define NUMEROS_H
 
 #include "controle_leds.h"
-typedef unsigned int uint;
+#include "matriz_de_leds.pio.h"
+#include "hardware/pio.h"
 
-//definição de cores
-double color_red_ativa[25] = {0.8, 0.8, 0.8, 0.8, 0.8,
-                              0.8, 0.8, 0.8, 0.8, 0.8, 
-                              0.8, 0.8, 0.8, 0.8, 0.8,
-                              0.8, 0.8, 0.8, 0.8, 0.8,
-                              0.8, 0.8, 0.8, 0.8, 0.8};
-                            
+// Para utilizar os objetos pio_global e sm_global definidos em Atividade1.c
+extern PIO pio_global;
+extern uint sm_global;
 
-double color_green_ativa[25] = {0.8, 0.8, 0.8, 0.8, 0.8,
-                                0.8, 0.8, 0.8, 0.8, 0.8, 
-                                0.8, 0.8, 0.8, 0.8, 0.8,
-                                0.8, 0.8, 0.8, 0.8, 0.8,
-                                0.8, 0.8, 0.8, 0.8, 0.8};
+// Definição das cores (vetores de 25 elementos – TOTAL_LEDS)
+double color_red_ativa[TOTAL_LEDS]   = {0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8};
 
-double color_blue_ativa[25] =  {0.8, 0.8, 0.8, 0.8, 0.8,
-                                0.8, 0.8, 0.8, 0.8, 0.8, 
-                                0.8, 0.8, 0.8, 0.8, 0.8,
-                                0.8, 0.8, 0.8, 0.8, 0.8,
-                                0.8, 0.8, 0.8, 0.8, 0.8};
+double color_green_ativa[TOTAL_LEDS] = {0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8};
 
-double color_red_desativa[25] =   {0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0, 
-                                   0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0};
-                            
+double color_blue_ativa[TOTAL_LEDS]  = {0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8,
+                                        0.8, 0.8, 0.8, 0.8, 0.8};
 
-double color_green_desativa[25] = {0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0, 
-                                   0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0};
+double color_red_desativa[TOTAL_LEDS]  = {0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0};
 
-double color_blue_desativa[25] =  {0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0, 
-                                   0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0,
-                                   0.0, 0.0, 0.0, 0.0, 0.0};
+double color_green_desativa[TOTAL_LEDS]= {0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0};
 
-// Definindo o frames de numeros
-uint zero [25] =    {0, 1, 1, 1, 0,
-                     0, 1, 0, 1, 0, 
-                     0, 1, 0, 1, 0,
-                     0, 1, 0, 1, 0,
-                     0, 1, 1, 1, 0};
+double color_blue_desativa[TOTAL_LEDS] = {0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0,
+                                          0.0, 0.0, 0.0, 0.0, 0.0};
 
-uint um [25] =      {0, 0, 1, 0, 0,
-                     0, 1, 1, 0, 0, 
-                     1, 0, 1, 0, 0,
-                     0, 0, 1, 0, 0,
-                     0, 0, 1, 0, 0};
+// Definição dos frames dos números (cada vetor com 25 elementos)
+uint zero[TOTAL_LEDS]   = {0, 1, 1, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 1, 1, 0};
 
-uint dois[25] =     {0, 1, 1, 1, 0,
-                     0, 0, 0, 1, 0, 
-                     0, 1, 1, 1, 0,
-                     0, 1, 0, 0, 0,
-                     0, 1, 1, 1, 0};
+uint um[TOTAL_LEDS]     = {0, 0, 1, 0, 0,
+                           0, 1, 1, 0, 0,
+                           1, 0, 1, 0, 0,
+                           0, 0, 1, 0, 0,
+                           0, 0, 1, 0, 0};
 
+uint dois[TOTAL_LEDS]   = {0, 1, 1, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 1, 1, 1, 0,
+                           0, 1, 0, 0, 0,
+                           0, 1, 1, 1, 0};
 
-uint tres [25] =    {0, 1, 1, 1, 0,
-                     0, 0, 0, 1, 0, 
-                     0, 1, 1, 1, 0,
-                     0, 0, 0, 1, 0,
-                     0, 1, 1, 1, 0};
+uint tres[TOTAL_LEDS]   = {0, 1, 1, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 1, 1, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 1, 1, 1, 0};
 
+uint quatro[TOTAL_LEDS] = {0, 1, 0, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 1, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 0, 0, 1, 0};
 
-uint quatro [25] =  {0, 1, 0, 1, 0,
-                     0, 1, 0, 1, 0, 
-                     0, 1, 1, 1, 0,
-                     0, 0, 0, 1, 0,
-                     0, 0, 0,1, 0};
+uint cinco[TOTAL_LEDS]  = {0, 1, 1, 1, 0,
+                           0, 1, 0, 0, 0,
+                           0, 1, 1, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 1, 1, 1, 0};
 
+uint seis[TOTAL_LEDS]   = {0, 1, 1, 1, 0,
+                           0, 1, 0, 0, 0,
+                           0, 1, 1, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 1, 1, 0};
 
-uint cinco [25] =   {0, 1, 1, 1, 0,
-                     0, 1, 0, 0, 0, 
-                     0, 1, 1, 1, 0,
-                     0, 0, 0, 1, 0,
-                     0, 1, 1, 1, 0};
+uint sete[TOTAL_LEDS]   = {0, 1, 1, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 0, 0, 1, 0};
 
+uint oito[TOTAL_LEDS]   = {0, 1, 1, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 1, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 1, 1, 0};
 
-uint seis [25] =    {0, 1, 1, 1, 0,
-                     0, 1, 0, 0, 0, 
-                     0, 1, 1, 1, 0,
-                     0, 1, 0, 1, 0,
-                     0, 1, 1, 1, 0};
+uint nove[TOTAL_LEDS]   = {0, 1, 1, 1, 0,
+                           0, 1, 0, 1, 0,
+                           0, 1, 1, 1, 0,
+                           0, 0, 0, 1, 0,
+                           0, 1, 1, 1, 0};
 
-uint sete [25] =    {0, 1, 1, 1, 0,
-                     0, 0, 0, 1, 0, 
-                     0, 0, 0, 1, 0,
-                     0, 0, 0, 1, 0,
-                     0, 0, 0, 1, 0};
-
-uint oito [25] =    {0, 1, 1, 1, 0,
-                     0, 1, 0, 1, 0, 
-                     0, 1, 1, 1, 0,
-                     0, 1, 0, 1, 0,
-                     0, 1, 1, 1, 0};
-
-uint nove [25] =    {0, 1, 1, 1, 0,
-                     0, 1, 0, 1, 0, 
-                     0, 1, 1, 1, 0,
-                     0, 0, 0, 1, 0,
-                     0, 1, 1, 1, 0};
-
-// Função para exibir o número na tela de LEDs
 void exibir_numero(uint contador) {
-    
-    // Verifica qual número deve ser exibido
     switch (contador) {
+        case 0:
+            atualizar_matriz(zero, color_red_ativa, color_green_desativa, color_blue_desativa, pio_global, sm_global);
+            break;
         case 1:
-           atualizar_matriz(zero, color_red_ativa, color_green_desativa, color_blue_desativa, valor_led, pio, sm);
+            atualizar_matriz(um, color_red_desativa, color_green_ativa, color_blue_desativa, pio_global, sm_global);
             break;
         case 2:
-           atualizar_matriz(um, color_red_desativa, color_green_ativa, color_blue_desativa, valor_led, pio, sm);
+            atualizar_matriz(dois, color_red_desativa, color_green_desativa, color_blue_ativa, pio_global, sm_global);
             break;
         case 3:
-           atualizar_matriz(dois, color_red_desativa, color_green_desativa, color_blue_ativa, valor_led, pio, sm);
+            atualizar_matriz(tres, color_red_ativa, color_green_ativa, color_blue_ativa, pio_global, sm_global);
             break;
         case 4:
-           atualizar_matriz(tres, color_red_ativa, color_green_ativa, color_blue_ativa, valor_led, pio, sm);
+            atualizar_matriz(quatro, color_red_ativa, color_green_desativa, color_blue_desativa, pio_global, sm_global);
             break;
         case 5:
-            atualizar_matriz(quatro, color_red_ativa, color_green_desativa, color_blue_desativa, valor_led, pio, sm);
+            atualizar_matriz(cinco, color_red_desativa, color_green_ativa, color_blue_desativa, pio_global, sm_global);
             break;
         case 6:
-           atualizar_matriz(cinco, color_red_desativa, color_green_ativa, color_blue_desativa, valor_led, pio, sm);
+            atualizar_matriz(seis, color_red_desativa, color_green_desativa, color_blue_ativa, pio_global, sm_global);
             break;
         case 7:
-           atualizar_matriz(seis, color_red_desativa, color_green_desativa, color_blue_ativa, valor_led, pio, sm);
+            atualizar_matriz(sete, color_red_ativa, color_green_ativa, color_blue_ativa, pio_global, sm_global);
             break;
         case 8:
-            atualizar_matriz(sete, color_red_ativa, color_green_ativa, color_blue_ativa, valor_led, pio, sm);
+            atualizar_matriz(oito, color_red_ativa, color_green_desativa, color_blue_desativa, pio_global, sm_global);
             break;
         case 9:
-           atualizar_matriz(oito, color_red_ativa, color_green_desativa, color_blue_desativa, valor_led, pio, sm);
+            atualizar_matriz(nove, color_red_desativa, color_green_ativa, color_blue_desativa, pio_global, sm_global);
             break;
-        case 10:
-           atualizar_matriz(nove, color_red_desativa, color_green_ativa, color_blue_desativa, valor_led, pio, sm);
+        default:
             break;
-
     }
 }
+
+#endif
