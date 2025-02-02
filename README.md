@@ -2,6 +2,11 @@
 **(SUB GRUPO 6 - ATIVIDADE DA AULA SÍNCRONA 27/01)**
 
 ─────────────────────────────────── ───────────────────────────────────
+
+
+
+
+
 *idealizadora do projeto:*
 **AMANDA CARDOSO LOPES**
 
@@ -12,6 +17,8 @@
 ─────────────────────────────────── ───────────────────────────────────
 
 O objetivo deste projeto é consolidar a compreensão dos conceitos relacionados ao uso de interrupções no microcontrolador RP2040 e explorar as funcionalidades da placa de desenvolvimento BitDogLab. O projeto envolve a implementação de um sistema de controle de LEDs e botões, aplicando interrupções para resposta rápida e debouncing via software para evitar leituras erradas.
+
+
 
 ─────────────────────────────────── ───────────────────────────────────
 
@@ -24,6 +31,9 @@ O objetivo deste projeto é consolidar a compreensão dos conceitos relacionados
 3. O botão B decrementa o número exibido na matriz de LEDs cada vez que for pressionado.
 4. A matriz de LEDs WS2812 exibe números de 0 a 9, feito pelos leds.
 5. EXTRA: Caso se clique no joystick, se entra no modo bootsel
+
+
+
 
 ─────────────────────────────────── ───────────────────────────────────
 
@@ -38,6 +48,9 @@ O objetivo deste projeto é consolidar a compreensão dos conceitos relacionados
   - LED RGB (GPIOs 11, 12 e 13)
   - Botão A (GPIO 5)
   - Botão B (GPIO 6)
+
+
+
 
 ─────────────────────────────────── ───────────────────────────────────
 
@@ -60,6 +73,9 @@ O objetivo deste projeto é consolidar a compreensão dos conceitos relacionados
    - Pressione os botões A e B para interagir com a matriz de LEDs.
    - Observe a piscagem do LED RGB.
 
+
+
+
 ─────────────────────────────────── ───────────────────────────────────
 
 ## CONCLUSÃO
@@ -68,6 +84,9 @@ O objetivo deste projeto é consolidar a compreensão dos conceitos relacionados
 
 Este projeto permitiu a exploração prática das interrupções no microcontrolador RP2040, consolidando o aprendizado sobre debouncing, controle de LEDs e manipulação de entradas digitais. A implementação na BitDogLab foi um desafio enriquecedor, que proporcionou uma experiência prática no uso de técnicas como interrupção e debouncing para a garantia de uma resposta eficiente aos comandos do usuário.
 
+
+
+
 ─────────────────────────────────── ───────────────────────────────────
 
 ## VÍDEO DO PROJETO
@@ -75,3 +94,7 @@ Este projeto permitiu a exploração prática das interrupções no microcontrol
 ─────────────────────────────────── ───────────────────────────────────
 
 *link:* https://drive.google.com/drive/folders/1Rvlse6CShJNtHR-vX4LIsW58eVneJFcK?usp=drive_link
+
+
+
+
