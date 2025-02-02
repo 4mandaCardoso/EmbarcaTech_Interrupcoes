@@ -7,7 +7,6 @@
 #include "hardware/clocks.h"
 #include "hardware/adc.h"
 #include "matriz_de_leds.pio.h"
-#include <stdlib.h> 
 
 #define WS2812_GPIO      7
 #define BUTTON_A         5
@@ -53,7 +52,7 @@ void iniciar_led_rgb() {
     gpio_set_dir(LED_AZUL, GPIO_OUT);
 }
 
-// Função de callback unificada para interrupção dos botões
+// Função para interrupção dos botões
 static void gpio_irq_handler(uint gpio, uint32_t events) {
     absolute_time_t now = get_absolute_time();
     uint32_t current_time = to_us_since_boot(now);
