@@ -1,4 +1,4 @@
-## PROJETO - Interrupção
+## PROJETO - Interrupções
 **(SUB GRUPO 6 - ATIVIDADE DA AULA SÍNCRONA 27/01)**
 
 ─────────────────────────────────── ───────────────────────────────────
