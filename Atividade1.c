@@ -7,13 +7,15 @@
 #include "hardware/clocks.h"
 #include "hardware/adc.h"
 #include "matriz_de_leds.pio.h"
-#include <stdlib.h>
+#include <stdlib.h> 
 
 #define WS2812_GPIO      7
 #define BUTTON_A         5
 #define BUTTON_B         6
 #define BUT_JSTICK       22
 #define LED_VERMELHO     13
+#define LED_VERDE        11
+#define LED_AZUL         12
 #define DEBOUNCE_DELAY_MS 200
 
 typedef unsigned int uint;
@@ -45,6 +47,10 @@ void piscar_led_vermelho() {
 void iniciar_led_rgb() {
     gpio_init(LED_VERMELHO);
     gpio_set_dir(LED_VERMELHO, GPIO_OUT);
+    gpio_init(LED_VERDE);
+    gpio_set_dir(LED_VERDE, GPIO_OUT);
+    gpio_init(LED_AZUL);
+    gpio_set_dir(LED_AZUL, GPIO_OUT);
 }
 
 // Função de callback unificada para interrupção dos botões
@@ -109,6 +115,8 @@ void configurar_botoes() {
 }
 
 int main() {
+    iniciar_led_rgb();
+    configurar_botoes();
     stdio_init_all();
 
     pio_global = pio0;
@@ -117,8 +125,6 @@ int main() {
     // Configura o clock do sistema (128 MHz, se suportado)
     set_sys_clock_khz(128000, false);
 
-    iniciar_led_rgb();
-    configurar_botoes();
 
     // Inicializa o PIO: adiciona o programa e o configura para os LEDs WS2812
     offset_global = pio_add_program(pio_global, &matriz_de_leds_program);
