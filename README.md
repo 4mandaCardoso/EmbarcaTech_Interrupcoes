@@ -1,21 +1,22 @@
 ## PROJETO - Interrupção
 **(SUB GRUPO 6 - ATIVIDADE DA AULA SÍNCRONA 27/01)**
-idealizador(a) do projeto:
 
 ─────────────────────────────────── ───────────────────────────────────
-
+*idealizadora do projeto:*
 **AMANDA CARDOSO LOPES**
 
 ─────────────────────────────────── ───────────────────────────────────
 
-OBJETIVO DO PROJETO
+## OBJETIVO DO PROJETO
+
 ─────────────────────────────────── ───────────────────────────────────
 
 O objetivo deste projeto é consolidar a compreensão dos conceitos relacionados ao uso de interrupções no microcontrolador RP2040 e explorar as funcionalidades da placa de desenvolvimento BitDogLab. O projeto envolve a implementação de um sistema de controle de LEDs e botões, aplicando interrupções para resposta rápida e debouncing via software para evitar leituras erradas.
 
 ─────────────────────────────────── ───────────────────────────────────
 
-FUNCIONALIDADES DO PROJETO
+## FUNCIONALIDADES DO PROJETO
+
 ─────────────────────────────────── ───────────────────────────────────
 
 1. O LED vermelho do LED RGB deve piscar continuamente 5 vezes por segundo.
@@ -26,7 +27,8 @@ FUNCIONALIDADES DO PROJETO
 
 ─────────────────────────────────── ───────────────────────────────────
 
-TECNOLOGIAS UTILIZADAS
+## TECNOLOGIAS UTILIZADAS
+
 ─────────────────────────────────── ───────────────────────────────────
 
 - **Linguagem:** C
@@ -39,7 +41,8 @@ TECNOLOGIAS UTILIZADAS
 
 ─────────────────────────────────── ───────────────────────────────────
 
-COMO EXECUTAR O PROJETO?
+## COMO EXECUTAR O PROJETO?
+
 ─────────────────────────────────── ───────────────────────────────────
 
 1. **Configuração Inicial:**
@@ -59,14 +62,16 @@ COMO EXECUTAR O PROJETO?
 
 ─────────────────────────────────── ───────────────────────────────────
 
-CONCLUSÃO
+## CONCLUSÃO
+
 ─────────────────────────────────── ───────────────────────────────────
 
 Este projeto permitiu a exploração prática das interrupções no microcontrolador RP2040, consolidando o aprendizado sobre debouncing, controle de LEDs e manipulação de entradas digitais. A implementação na BitDogLab foi um desafio enriquecedor, que proporcionou uma experiência prática no uso de técnicas como interrupção e debouncing para a garantia de uma resposta eficiente aos comandos do usuário.
 
 ─────────────────────────────────── ───────────────────────────────────
 
-VÍDEO DO PROJETO
+## VÍDEO DO PROJETO
+
 ─────────────────────────────────── ───────────────────────────────────
 
 *link:* https://drive.google.com/drive/folders/1Rvlse6CShJNtHR-vX4LIsW58eVneJFcK?usp=drive_link
